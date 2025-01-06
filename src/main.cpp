@@ -1,3 +1,4 @@
+#include "./bvh_node.hpp"
 #include "./camera.hpp"
 #include "./material.hpp"
 #include "./sphere.hpp"
@@ -68,6 +69,7 @@ int main()
   auto material3 = make_shared<Lambertian>(color(0.8, 0.2, 0.3));  // Reddish
   world.add(make_shared<Sphere>(point3(2.5, 1, 0), 1.0, material3));
 
+  /*world = hittable_list(make_shared<bvh_node>(world));*/
   // Camera settings
   Camera cam;
   cam.aspect_ratio = 16.0 / 9.0;

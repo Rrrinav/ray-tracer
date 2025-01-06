@@ -1,7 +1,8 @@
 #pragma once
 
+#include "./aabb.hpp"
+#include "./interval.hpp"
 #include "./ray.hpp"
-#include "interval.hpp"
 
 class material;
 
@@ -27,4 +28,5 @@ public:
   virtual ~Shape() = default;
 
   virtual bool hit(const ray &r, Interval interval, hit_record &rec) const = 0;
+  virtual aabb bounding_box() const = 0;
 };
