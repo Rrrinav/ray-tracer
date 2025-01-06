@@ -5,6 +5,7 @@ CXXFLAGS = -std=c++17 -O3 -Wall -Wextra
 # Directories
 SRC_DIR = src
 OUTPUT_DIR = bin
+OUTPUT_FILE ?= image.ppm
 
 # Target executable name
 TARGET = raytracer
@@ -23,7 +24,7 @@ run: $(OUTPUT_DIR)/$(TARGET)
 
 # Generate image output
 render: $(OUTPUT_DIR)/$(TARGET)
-	./$(OUTPUT_DIR)/$(TARGET) > image.ppm
+	./$(OUTPUT_DIR)/$(TARGET) > $(OUTPUT_FILE)
 
 # Clean build artifacts
 clean:

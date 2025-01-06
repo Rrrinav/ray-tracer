@@ -21,3 +21,6 @@ make render   # Generate ray traced image (output to image.ppm)
 make clean    # Clean build artifacts
 open image.ppm # However you want, xdg-open image.ppm
 ```
+## References
+
+[_Ray Tracing Book_](https://raytracing.github.io/)
