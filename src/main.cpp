@@ -28,8 +28,9 @@ int main()
           // diffuse
           auto albedo = color::random() * color::random();
           Sphere_material = make_shared<Lambertian>(albedo);
-          auto center2 = center + vec3(0, random_double(0, .5), 0);
-          world.add(make_shared<Sphere>(center, center2, 0.2, Sphere_material));
+          /*auto center2 = center + vec3(0, random_double(0, .5), 0);*/
+          /*world.add(make_shared<Sphere>(center, center2, 0.2, Sphere_material));*/
+          world.add(make_shared<Sphere>(center, 0.2, Sphere_material));
         }
         else if (choose_mat < 0.95)
         {
@@ -66,7 +67,7 @@ int main()
   cam.max_depth = 150;
 
   cam.vfov = 20;
-  cam.lookfrom = point3(13, 2, 3);
+  cam.lookfrom = point3(13, 10, 3);
   cam.lookat = point3(0, 0, 0);
   cam.vup = vec3(0, 1, 0);
 

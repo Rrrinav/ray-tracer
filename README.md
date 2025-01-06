@@ -1,6 +1,13 @@
 # Ray Tracing Project
 
+### 1. Normal
 ![img](./output.png)
+
+### 2. Top View
+![img](./topview.png)
+
+### 3. Motion Blur
+![img](./motion-blur.png)
 
 Ray tracing is a technique for modeling light transport for use in a wide variety of rendering algorithms for generating digital images.
 
