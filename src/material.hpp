@@ -2,6 +2,7 @@
 
 #include "./color.hpp"
 #include "./shape.hpp"
+#include "./texture.hpp"
 
 class material
 {
@@ -13,10 +14,11 @@ public:
 
 class Lambertian : public material
 {
-  color albedo;
+  shared_ptr<Texture> tex;
 
 public:
-  Lambertian(const color &albedo) : albedo(albedo) {}
+  Lambertian(const color &albedo) : tex(make_shared<solid_color>(albedo)) {}
+  Lambertian(shared_ptr<Texture> tex) : tex(tex) {}
 
   bool scatter(const ray &r_in, const hit_record &rec, color &attenuation, ray &scattered) const override
   {
@@ -28,7 +30,7 @@ public:
       scatter_direction = rec.normal;
 
     scattered = ray(rec.point, scatter_direction, r_in.time());
-    attenuation = albedo;
+    attenuation = tex->value(rec.u, rec.v, rec.point);
     return true;
   }
 };

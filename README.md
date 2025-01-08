@@ -1,15 +1,16 @@
 # Ray Tracing Project
 
-
+### 4. Perlin Texture
+![img](./demos/perlin.png)
 
 ### 1. Normal
-![img](./images/normal.png)
+![img](./demos/normal.png)
 
-### 2. Top View
-![img](./images/top.png)
+### 2. Checker top View
+![img](./demos/checker.png)
 
 ### 3. Motion Blur
-![img](./images/mb.png)
+![img](./demos/mb.png)
 
 Ray tracing is a technique for modeling light transport for use in a wide variety of rendering algorithms for generating digital images.
 
@@ -20,14 +21,24 @@ Ray tracing is a technique for modeling light transport for use in a wide variet
 ## Prerequisites
 
 - C++17 compatible compiler (g++ recommended)
-- Make
+- Make (or [build it yourself](#building-mannualy))
 
 ## Building the Project
+
+### Using make
 
 ```bash
 make render   # Generate ray traced image (output to image.ppm)
 make clean    # Clean build artifacts
-open image.ppm # However you want, xdg-open image.ppm
+open image.ppm # However you want, E.g. xdg-open image.ppm
+```
+
+### Building mannualy
+
+```bash
+cd src/
+g++ main.cpp -o main -std=c++17
+main > output.ppm
 ```
 
 ## References

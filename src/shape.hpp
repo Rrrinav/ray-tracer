@@ -9,9 +9,11 @@ class material;
 class hit_record
 {
 public:
+  double t;
+  double u;
+  double v;
   point3 point;
   vec3 normal;
-  double t;
   bool is_front_facing;
   shared_ptr<material> mat;
 

@@ -1,6 +1,6 @@
 # Compiler settings
 CXX = g++
-CXXFLAGS = -std=c++17 -O3 -Wall -Wextra
+CXXFLAGS = -std=c++17 -O2 -Wall -Wextra
 
 # Directories
 SRC_DIR = src
@@ -8,7 +8,7 @@ OUTPUT_DIR = bin
 OUTPUT_FILE ?= image.ppm
 
 # Target executable name
-TARGET = raytracer
+TARGET ?= raytracer
 
 # Build the project
 all: $(OUTPUT_DIR)/$(TARGET)
